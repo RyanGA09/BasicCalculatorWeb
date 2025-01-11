@@ -1,2 +1,3 @@
-# BasicCalculatorWeb
-A simple calculator application built using HTML, CSS, and JavaScript
+# Basic Calculator Web
+
+A Basic calculator application built using HTML, CSS, and JavaScript
