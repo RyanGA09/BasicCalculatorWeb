@@ -33,26 +33,10 @@ function appendValue(value) {
   if (
     display.value === "" ||
     display.value === "0"
-    // display.value === "0/" ||
-    // display.value === "0*" ||
-    // display.value === "0-" ||
-    // display.value === "0+"
   ) {
     if (value === ".") {
       display.value = "0.";
-    }
-    // else if (value === "+") {
-    //   display.value = "0+";
-    // } else if (value === "-") {
-    //   display.value = "0-";
-    // } else if (value === "*") {
-    //   display.value = "0*";
-    // } else if (value === "/") {
-    //   display.value = "0/";
-    // } else if (value === "=") {
-    //   display.value = "0";
-    // }
-    else if (["+", "-", "*", "/"].includes(value)) {
+    } else if (["+", "-", "*", "/"].includes(value)) {
       display.value = "0" + value;
     } else {
       display.value = value;
