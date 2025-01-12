@@ -3,11 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator</title>
+    <title>Basic Calculator</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
-    <header></header>
+    <!-- Header Navbar -->
+    <header class="navbar">
+      <nav>
+        <div class="navbar-container">
+          <!-- Navbar Title -->
+          <h1 class="navbar-title">Basic Calculator</h1>
+
+          <!-- Navbar Links -->
+          <ul class="navbar-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Calculator Section -->
     <div class="calculator">
       <input type="text" class="display" id="display" disabled />
       <div class="buttons">
@@ -41,22 +58,21 @@
       </div>
     </div>
 
-    <!-- Start Footer -->
+    <!-- Footer -->
     <footer id="footer" class="footer">
       <div class="copyright">
-        Copyright &copy;
-        <strong
-          ><span
-            ><a
-              href="https://www.linkedin.com/in/ryan-gading-abdullah/"
-              target="_blank"
-              >Ryan Gading Abdullah</a
-            ></span
-          ></strong
-        >. All Rights Reserved
+        &copy; <strong>2025</strong>
+        <a
+          href="https://www.linkedin.com/in/ryan-gading-abdullah/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer-link"
+        >
+          Ryan Gading Abdullah
+        </a>
+        . All Rights Reserved.
       </div>
     </footer>
-    <!-- End Footer -->
 
     <script src="assets/js/scripts.js"></script>
   </body>
