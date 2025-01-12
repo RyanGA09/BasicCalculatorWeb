@@ -61,7 +61,7 @@ body {
 }
 
 .button {
-  background: #007bff;
+  background: #000000;
   color: white;
   border: none;
   border-radius: 5px;
@@ -72,15 +72,15 @@ body {
 }
 
 .button:hover {
-  background: #0056b3;
+  background: #282727;
 }
 
 .button.operator {
-  background: #28a745;
+  background: #4f4f4f;
 }
 
 .button.operator:hover {
-  background: #1e7e34;
+  background: #c1c5c2;
 }
 
 .button.clear {
@@ -101,7 +101,7 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
-  margin: 0; /* Tambahkan untuk menghapus margin ekstra */
+  margin: 0; /* Add to remove extra margin */
 }
 
 /* Footer Copyright Link */
@@ -113,7 +113,7 @@ body {
 }
 
 .footer-link:hover {
-  color: #0056b3;
+  color: #4397f2;
   text-decoration: underline;
 }
 
