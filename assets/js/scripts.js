@@ -10,9 +10,20 @@ function clearDisplay() {
 
 function calculate() {
   try {
-    display.value = eval(display.value);
+    // Ganti operator ^ dengan Math.pow
+    const expression = display.value.replace(/\^/g, "**");
+
+    // Evaluasi ekspresi
+    const result = eval(expression);
+
+    if (!isFinite(result)) {
+      display.value = result > 0 ? "∞" : "-∞";
+    } else if (isNaN(result)) {
+      display.value = "undefined (Invalid operation)";
+    } else {
+      display.value = result;
+    }
   } catch (error) {
-    alert("Invalid Expression");
-    clearDisplay();
+    display.value = "undefined (Invalid expression)";
   }
 }

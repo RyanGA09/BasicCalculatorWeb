@@ -19,6 +19,20 @@ body {
   z-index: 1000;
 }
 
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Navbar Title */
+.navbar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  color: white;
+}
+
 .navbar-links {
   list-style: none;
   display: flex;
@@ -69,7 +83,7 @@ body {
 
 .buttons {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 10px;
 }
 
@@ -131,6 +145,15 @@ body {
 
 /* Responsiveness */
 @media screen and (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar-title {
+    font-size: 1.2rem;
+  }
+
   .navbar-links {
     flex-direction: column;
     align-items: center;
@@ -157,7 +180,9 @@ body {
   }
 
   .footer {
-    font-size: 12px;
+    text-align: center;
+    font-size: 0.9rem;
+    /* font-size: 12px; */
     padding: 15px;
   }
 }
@@ -177,4 +202,3 @@ body {
     height: 40px;
   }
 }
-
