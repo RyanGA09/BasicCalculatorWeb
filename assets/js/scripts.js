@@ -19,49 +19,77 @@ function calculate() {
       // display.value = "undefined (Invalid operation)";
       display.value = "-∞";
     } else if (isNaN(result)) {
-      display.value = "undefined (Invalid operation)";
+      display.value = "undefined";
     } else {
       display.value = result;
     }
   } catch (error) {
-    display.value = "undefined (Invalid expression)";
+    display.value = "Invalid expression";
   }
 }
 
 // Fungsi untuk menambahkan angka atau koma
 function appendValue(value) {
-  if (display.value === "" || display.value === "0") {
+  if (
+    display.value === "" ||
+    display.value === "0"
+    // display.value === "0/" ||
+    // display.value === "0*" ||
+    // display.value === "0-" ||
+    // display.value === "0+"
+  ) {
     if (value === ".") {
-      // Jika koma ditekan setelah "0"
       display.value = "0.";
+    }
+    // else if (value === "+") {
+    //   display.value = "0+";
+    // } else if (value === "-") {
+    //   display.value = "0-";
+    // } else if (value === "*") {
+    //   display.value = "0*";
+    // } else if (value === "/") {
+    //   display.value = "0/";
+    // } else if (value === "=") {
+    //   display.value = "0";
+    // }
+    else if (["+", "-", "*", "/"].includes(value)) {
+      display.value = "0" + value;
     } else {
-      // Ganti "0" dengan angka yang ditekan
       display.value = value;
     }
   } else {
-    // Tambahkan nilai ke display
-    display.value += value;
+    // display.value += value;
+    // Cek jika tombol yang ditekan adalah operator dan jika sudah ada operator sebelumnya
+    if (["+", "-", "*", "/"].includes(value)) {
+      // Jika operator sudah ada, jangan menggantinya, hanya tambahkan operator berikutnya
+      if (
+        ["+", "-", "*", "/"].includes(display.value[display.value.length - 1])
+      ) {
+        display.value = display.value.slice(0, -1) + value; // Gantikan operator sebelumnya dengan yang baru
+      } else {
+        display.value += value; // Tambahkan operator ke belakang
+      }
+    } else {
+      // Untuk angka, tambahkan ke display
+      display.value += value;
+    }
   }
 }
 
 // Fungsi khusus untuk tombol "0"
 function appendZero() {
-  // Jika display kosong, hanya tambahkan satu "0"
   if (display.value === "" || display.value === "0") {
     display.value = "0";
   } else {
-    // Jika tidak kosong, tambahkan "0" biasa
     display.value += "0";
   }
 }
 
 // Fungsi untuk tombol "00"
 function appendDoubleZero() {
-  // Jika display kosong atau hanya "0", tetap hanya menampilkan "0"
   if (display.value === "" || display.value === "0") {
     display.value = "0";
   } else {
-    // Jika tidak kosong, tambahkan "00"
     display.value += "00";
   }
 }
