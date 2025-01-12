@@ -16,8 +16,12 @@ function calculate() {
     // Evaluasi ekspresi
     const result = eval(expression);
 
-    if (!isFinite(result)) {
-      display.value = result > 0 ? "∞" : "-∞";
+    if (result === Infinity) {
+      // display.value = result > 0 ? "∞" : "-∞";
+      display.value = "∞";
+    } else if (result === -Infinity) {
+      // display.value = "undefined (Invalid operation)";
+      display.value = "-∞";
     } else if (isNaN(result)) {
       display.value = "undefined (Invalid operation)";
     } else {
